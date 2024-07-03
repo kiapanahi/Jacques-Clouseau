@@ -6,7 +6,7 @@ This document details the architecture of the backend service for our big-data s
 
 ## Architectural Overview
 
-```mermaid
+```
 +---------------------+
 | Front-End           |
 +----------+----------+

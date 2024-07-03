@@ -6,7 +6,7 @@ This document provides a high-level overview of the architecture of the big-data
 
 ## Architecture Diagram
 
-```mermaid
+```
 +---------------+    +-----------------+    +---------------+
 | Front-End     | -> | Backend Service | -> | Kafka Cluster |
 | (Web/Mobile)  |    | (API Gateway)   |    |               |
