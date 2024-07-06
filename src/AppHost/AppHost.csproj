@@ -10,4 +10,8 @@
     <PackageReference Include="Aspire.Hosting.AppHost" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\api\Api.csproj" />
+  </ItemGroup>
+
 </Project>
