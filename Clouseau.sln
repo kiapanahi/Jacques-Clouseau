@@ -18,6 +18,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Directory.Packages.props = Directory.Packages.props
 		global.json = global.json
 		LICENSE = LICENSE
+		nuget.config = nuget.config
 		OPEN_ISSUES.md = OPEN_ISSUES.md
 		README.md = README.md
 		startvs.cmd = startvs.cmd
