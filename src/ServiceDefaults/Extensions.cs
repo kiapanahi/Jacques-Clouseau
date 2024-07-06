@@ -3,8 +3,10 @@ using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Logging;
+
 using OpenTelemetry;
 using OpenTelemetry.Metrics;
+using OpenTelemetry.Resources;
 using OpenTelemetry.Trace;
 
 namespace Microsoft.Extensions.Hosting;
@@ -14,6 +16,10 @@ namespace Microsoft.Extensions.Hosting;
 // To learn more about using this project, see https://aka.ms/dotnet/aspire/service-defaults
 public static class Extensions
 {
+    private const string ServiceName = "clouseau-tracker";
+    private static readonly string ServiceVersion = typeof(Extensions).Assembly.GetName().Version!.ToString(3);
+
+
     public static IHostApplicationBuilder AddServiceDefaults(this IHostApplicationBuilder builder)
     {
         builder.ConfigureOpenTelemetry();
@@ -38,24 +44,26 @@ public static class Extensions
     {
         builder.Logging.AddOpenTelemetry(logging =>
         {
+            logging.SetResourceBuilder(ResourceBuilder.CreateDefault()
+                    .AddService(ServiceName, serviceVersion: ServiceVersion));
+
             logging.IncludeFormattedMessage = true;
+
             logging.IncludeScopes = true;
         });
 
         builder.Services.AddOpenTelemetry()
-            .WithMetrics(metrics =>
-            {
-                metrics.AddAspNetCoreInstrumentation()
+            .ConfigureResource(recourceBuilder => recourceBuilder
+                    .AddService(ServiceName, serviceVersion: ServiceVersion))
+            .WithMetrics(metrics => metrics
+                    .AddAspNetCoreInstrumentation()
                     .AddHttpClientInstrumentation()
-                    .AddRuntimeInstrumentation();
-            })
-            .WithTracing(tracing =>
-            {
-                tracing.AddAspNetCoreInstrumentation()
+                    .AddRuntimeInstrumentation())
+            .WithTracing(tracing => tracing
+                    .AddAspNetCoreInstrumentation()
                     // Uncomment the following line to enable gRPC instrumentation (requires the OpenTelemetry.Instrumentation.GrpcNetClient package)
                     //.AddGrpcClientInstrumentation()
-                    .AddHttpClientInstrumentation();
-            });
+                    .AddHttpClientInstrumentation());
 
         builder.AddOpenTelemetryExporters();
 
