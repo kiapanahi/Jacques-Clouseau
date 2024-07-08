@@ -8,7 +8,7 @@
         <AnalysisMode>all</AnalysisMode>
         <LangVersion>latest</LangVersion>
 
-        <Version>0.0.2</Version>
+        <Version>0.0.3</Version>
         <VersionSuffix>dev</VersionSuffix>
     </PropertyGroup>
     <PropertyGroup>
