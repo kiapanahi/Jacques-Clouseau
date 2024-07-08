@@ -9,6 +9,8 @@ using OpenTelemetry.Metrics;
 using OpenTelemetry.Resources;
 using OpenTelemetry.Trace;
 
+using static Clouseau.ServiceDefaults.Diagnostics;
+
 namespace Microsoft.Extensions.Hosting;
 
 // Adds common .NET Aspire services: service discovery, resilience, health checks, and OpenTelemetry.
@@ -16,10 +18,6 @@ namespace Microsoft.Extensions.Hosting;
 // To learn more about using this project, see https://aka.ms/dotnet/aspire/service-defaults
 public static class Extensions
 {
-    private const string ServiceName = "clouseau-tracker";
-    private static readonly string ServiceVersion = typeof(Extensions).Assembly.GetName().Version!.ToString(3);
-
-
     public static IHostApplicationBuilder AddServiceDefaults(this IHostApplicationBuilder builder)
     {
         builder.ConfigureOpenTelemetry();
@@ -45,7 +43,7 @@ public static class Extensions
         builder.Logging.AddOpenTelemetry(logging =>
         {
             logging.SetResourceBuilder(ResourceBuilder.CreateDefault()
-                    .AddService(ServiceName, serviceVersion: ServiceVersion));
+                    .AddService(ServiceName, serviceVersion: SystemVersion));
 
             logging.IncludeFormattedMessage = true;
 
@@ -54,7 +52,7 @@ public static class Extensions
 
         builder.Services.AddOpenTelemetry()
             .ConfigureResource(recourceBuilder => recourceBuilder
-                    .AddService(ServiceName, serviceVersion: ServiceVersion))
+                    .AddService(ServiceName, serviceVersion: SystemVersion))
             .WithMetrics(metrics => metrics
                     .AddAspNetCoreInstrumentation()
                     .AddHttpClientInstrumentation()
