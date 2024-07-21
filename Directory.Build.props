@@ -4,8 +4,8 @@
         <TargetFramework>net8.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <AnalysisLevel>latest-all</AnalysisLevel>
-        <AnalysisMode>all</AnalysisMode>
+        <AnalysisLevel>latest-recommended</AnalysisLevel>
+        <AnalysisMode>recommended</AnalysisMode>
         <LangVersion>latest</LangVersion>
 
         <Version>0.0.3</Version>
