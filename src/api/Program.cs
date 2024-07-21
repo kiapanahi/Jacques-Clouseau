@@ -2,9 +2,13 @@
 
 using Api.Tracking;
 
+using Clouseau.Api.Tracking.Extensions;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.AddServiceDefaults();
+
+builder.AddTrackingServices();
 
 builder.Services
     .AddEndpointsApiExplorer()
