@@ -9,7 +9,7 @@
         <LangVersion>latest</LangVersion>
 
         <Version>0.0.3</Version>
-        <VersionSuffix>dev</VersionSuffix>
+        <VersionSuffix Condition="'$(Configuration)' == 'Debug'">dev</VersionSuffix>
     </PropertyGroup>
     <PropertyGroup>
         <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
