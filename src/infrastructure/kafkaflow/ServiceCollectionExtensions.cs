@@ -17,14 +17,8 @@ public static class ServiceCollectionExtensions
             .UseConsoleLog()
             .AddCluster(cluster => cluster
                 .WithName("local-cluster")
-                .WithBrokers(["localhost:29092"]) //,localhost:29094,localhost:29096
+                .WithBrokers(["localhost:29092,localhost:29094,localhost:29096"])
                 .WithSchemaRegistry(config => config.Url = "http://localhost:8081")
-                //.WithSecurityInformation(si =>
-                //{
-                //    si.SecurityProtocol = global::KafkaFlow.Configuration.SecurityProtocol.;
-                //    si.SaslMechanism = global::KafkaFlow.Configuration.SaslMechanism.Plain;
-                //    si.SslEndpointIdentificationAlgorithm = global::KafkaFlow.Configuration.SslEndpointIdentificationAlgorithm.None;
-                //})
                 .CreateTopicIfNotExists("cbt", 1, 1)
                 .AddProducer<CbtEventProducer>(producer => producer
                         .DefaultTopic("cbt")
