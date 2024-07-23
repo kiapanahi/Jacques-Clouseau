@@ -5,11 +5,16 @@
     </PropertyGroup>
     <ItemGroup>
         <ProjectReference Include="..\..\ServiceDefaults\ServiceDefaults.csproj" />
+        <ProjectReference Include="..\..\core\Clouseau.Core.csproj" />
     </ItemGroup>
     <ItemGroup>
       <PackageReference Include="KafkaFlow" />
       <PackageReference Include="KafkaFlow.LogHandler.Console" />
       <PackageReference Include="KafkaFlow.Microsoft.DependencyInjection" />
+      <PackageReference Include="KafkaFlow.OpenTelemetry" />
+      <PackageReference Include="KafkaFlow.Serializer.JsonCore" />
+      <PackageReference Include="KafkaFlow.Serializer.SchemaRegistry.ConfluentAvro" />
+      <PackageReference Include="Microsoft.Extensions.DependencyInjection" />
     </ItemGroup>
 
 </Project>

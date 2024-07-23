@@ -3,12 +3,15 @@
 using Api.Tracking;
 
 using Clouseau.Api.Tracking.Extensions;
+using Clouseau.Infrastructure.Kafka.KafkaFlow;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.AddServiceDefaults();
 
 builder.AddTrackingServices();
+
+builder.Services.AddClouseauKafka();
 
 builder.Services
     .AddEndpointsApiExplorer()
