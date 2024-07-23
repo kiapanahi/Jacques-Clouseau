@@ -1,0 +1,73 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{54DC6CB5-F911-45C3-B34C-7EB9A2E4077F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceDefaults", "src\ServiceDefaults\ServiceDefaults.csproj", "{25769478-9749-4A23-AF8E-4BC103D785B8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppHost", "src\AppHost\AppHost.csproj", "{1BCADB11-FA7C-4884-BCBE-36FD2A958D32}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5C4ED518-E3EC-42C4-A9EA-D554D6F0536C}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitignore = .gitignore
+		Directory.Build.props = Directory.Build.props
+		Directory.Build.targets = Directory.Build.targets
+		Directory.Packages.props = Directory.Packages.props
+		global.json = global.json
+		LICENSE = LICENSE
+		nuget.config = nuget.config
+		OPEN_ISSUES.md = OPEN_ISSUES.md
+		README.md = README.md
+		startvs.cmd = startvs.cmd
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{68000C48-9109-4F30-94D8-2E03EFD1CB6B}"
+	ProjectSection(SolutionItems) = preProject
+		docs\ADR_001.md = docs\ADR_001.md
+		docs\ADR_002.md = docs\ADR_002.md
+		docs\ADR_003.md = docs\ADR_003.md
+		docs\ADR_004.md = docs\ADR_004.md
+		docs\ADR_005.md = docs\ADR_005.md
+		docs\ADR_006.md = docs\ADR_006.md
+		docs\ADR_007.md = docs\ADR_007.md
+		docs\ADR_008.md = docs\ADR_008.md
+		docs\Backend_Service_Architecture.md = docs\Backend_Service_Architecture.md
+		docs\System_Architecture_Overview.md = docs\System_Architecture_Overview.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api", "src\api\Api.csproj", "{2020CA38-2E24-438B-923D-8EB7D287C816}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{25769478-9749-4A23-AF8E-4BC103D785B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25769478-9749-4A23-AF8E-4BC103D785B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25769478-9749-4A23-AF8E-4BC103D785B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25769478-9749-4A23-AF8E-4BC103D785B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BCADB11-FA7C-4884-BCBE-36FD2A958D32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BCADB11-FA7C-4884-BCBE-36FD2A958D32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BCADB11-FA7C-4884-BCBE-36FD2A958D32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BCADB11-FA7C-4884-BCBE-36FD2A958D32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2020CA38-2E24-438B-923D-8EB7D287C816}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2020CA38-2E24-438B-923D-8EB7D287C816}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2020CA38-2E24-438B-923D-8EB7D287C816}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2020CA38-2E24-438B-923D-8EB7D287C816}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{25769478-9749-4A23-AF8E-4BC103D785B8} = {54DC6CB5-F911-45C3-B34C-7EB9A2E4077F}
+		{1BCADB11-FA7C-4884-BCBE-36FD2A958D32} = {54DC6CB5-F911-45C3-B34C-7EB9A2E4077F}
+		{2020CA38-2E24-438B-923D-8EB7D287C816} = {54DC6CB5-F911-45C3-B34C-7EB9A2E4077F}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BEF8045A-EE5F-400B-9D6D-844D4C56F122}
+	EndGlobalSection
+EndGlobal
