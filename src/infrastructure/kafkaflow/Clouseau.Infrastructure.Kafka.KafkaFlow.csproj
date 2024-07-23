@@ -6,5 +6,10 @@
     <ItemGroup>
         <ProjectReference Include="..\..\ServiceDefaults\ServiceDefaults.csproj" />
     </ItemGroup>
+    <ItemGroup>
+      <PackageReference Include="KafkaFlow" />
+      <PackageReference Include="KafkaFlow.LogHandler.Console" />
+      <PackageReference Include="KafkaFlow.Microsoft.DependencyInjection" />
+    </ItemGroup>
 
 </Project>
