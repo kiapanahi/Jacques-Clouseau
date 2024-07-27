@@ -48,6 +48,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Kafka", "Kafka", "{9217F320
 		infrastructure\kafka-cluster\schema-registry.properties = infrastructure\kafka-cluster\schema-registry.properties
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clouseau.Infrastructure", "src\infrastructure\Clouseau.Infrastructure.csproj", "{9DCA0BBF-88FC-4E16-9BB3-98671AAA29A3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -66,6 +68,10 @@ Global
 		{2020CA38-2E24-438B-923D-8EB7D287C816}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2020CA38-2E24-438B-923D-8EB7D287C816}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2020CA38-2E24-438B-923D-8EB7D287C816}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DCA0BBF-88FC-4E16-9BB3-98671AAA29A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DCA0BBF-88FC-4E16-9BB3-98671AAA29A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DCA0BBF-88FC-4E16-9BB3-98671AAA29A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DCA0BBF-88FC-4E16-9BB3-98671AAA29A3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -75,6 +81,7 @@ Global
 		{1BCADB11-FA7C-4884-BCBE-36FD2A958D32} = {54DC6CB5-F911-45C3-B34C-7EB9A2E4077F}
 		{2020CA38-2E24-438B-923D-8EB7D287C816} = {54DC6CB5-F911-45C3-B34C-7EB9A2E4077F}
 		{9217F320-2AF8-4752-A7AD-DFBA17D10193} = {FB6FD2DA-12EE-4C5C-80E7-231D3B1B874E}
+		{9DCA0BBF-88FC-4E16-9BB3-98671AAA29A3} = {54DC6CB5-F911-45C3-B34C-7EB9A2E4077F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BEF8045A-EE5F-400B-9D6D-844D4C56F122}
