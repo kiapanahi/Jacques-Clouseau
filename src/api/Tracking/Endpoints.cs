@@ -1,5 +1,4 @@
 ﻿using Clouseau.Api.Tracking;
-using Clouseau.Infrastructure.Kafka.KafkaFlow.Producers;
 
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,8 +9,7 @@ internal static class Endpoints
     internal static IEndpointRouteBuilder MapTrackingEndpoints(this IEndpointRouteBuilder app)
     {
         app.MapGroup("/api/v1")
-            .MapPost("track", async (HttpContext ctx,
-                    [FromServices] ICbtEventProducer producer,
+            .MapPost("track", (HttpContext ctx,
                     [FromServices] ILoggerFactory loggerFactory,
                     [FromServices] TrackingMetrics metrics) =>
             {
@@ -29,7 +27,6 @@ internal static class Endpoints
                     return Results.BadRequest();
                 }
 
-                await producer.PublishEvent();
                 metrics.Accepted();
                 activity?.AddTag("header-value", headerValue);
                 logger.EventTracked();
