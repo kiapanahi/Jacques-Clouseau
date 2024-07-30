@@ -1,0 +1,13 @@
+{
+    "folders": [
+        {
+            "path": "C:/Users/kiapa/Projects/Contrib/GitHub/k/Clouseau"
+        }
+    ],
+    "settings": {
+        "csharp.format.enable": true,
+        "csharp.suppressDotnetRestoreNotification": true,
+        "dotnet.defaultSolution": "Cleaseau.sln",
+        "solutionexplorer.showMode": "activityBar"
+    }
+}
