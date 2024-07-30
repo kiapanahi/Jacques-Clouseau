@@ -35,7 +35,7 @@ services:
       - SCHEMA_REGISTRY_LOG4J_ROOT_LOGLEVEL=INFO
       - KAFKA_OPTS="-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false"
     volumes:
-      - ./configs/schema-registry.properties:/etc/schema-registry/schema-registry.properties
+      - ./schema-registry.properties:/etc/schema-registry/schema-registry.properties
   kafka-rest-proxy:
     image: confluentinc/cp-kafka-rest
     depends_on:
