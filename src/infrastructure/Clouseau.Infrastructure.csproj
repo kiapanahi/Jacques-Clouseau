@@ -4,9 +4,6 @@
         <AssemblyName>clouseau.infrastructure</AssemblyName>
     </PropertyGroup>
     <ItemGroup>
-      <ProjectReference Include="..\ServiceDefaults\ServiceDefaults.csproj" />
-    </ItemGroup>
-    <ItemGroup>
       <PackageReference Include="Microsoft.Kiota.Abstractions" />
       <PackageReference Include="Microsoft.Kiota.Authentication.Azure" />
       <PackageReference Include="Microsoft.Kiota.Http.HttpClientLibrary" />
@@ -14,5 +11,8 @@
       <PackageReference Include="Microsoft.Kiota.Serialization.Json" />
       <PackageReference Include="Microsoft.Kiota.Serialization.Multipart" />
       <PackageReference Include="Microsoft.Kiota.Serialization.Text" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\core\Clouseau.Core.csproj" />
     </ItemGroup>
 </Project>
