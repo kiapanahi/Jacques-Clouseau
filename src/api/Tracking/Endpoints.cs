@@ -4,14 +4,22 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Tracking;
 
+/// <summary>
+/// Contains methods for mapping tracking endpoints in the API.
+/// </summary>
 internal static class Endpoints
 {
+    /// <summary>
+    /// Maps the tracking endpoints in the API.
+    /// </summary>
+    /// <param name="app">The <see cref="IEndpointRouteBuilder"/> instance.</param>
+    /// <returns>The <see cref="IEndpointRouteBuilder"/> instance.</returns>
     internal static IEndpointRouteBuilder MapTrackingEndpoints(this IEndpointRouteBuilder app)
     {
         app.MapGroup("/api/v1")
             .MapPost("track", (HttpContext ctx,
-                    [FromServices] ILoggerFactory loggerFactory,
-                    [FromServices] TrackingMetrics metrics) =>
+                            [FromServices] ILoggerFactory loggerFactory,
+                            [FromServices] ITrackingMetrics metrics) =>
             {
                 using var activity = TrackingActivity.TrackingActivitySource.StartActivity("event.tracking");
 
@@ -32,16 +40,19 @@ internal static class Endpoints
                 logger.EventTracked();
 
                 return Results.Accepted();
+
             })
             .Produces(StatusCodes.Status202Accepted)
             .ProducesProblem(StatusCodes.Status400BadRequest)
             .WithOpenApi()
             .WithName("tracker-api");
+
         return app;
     }
 }
 
-internal static partial class Log
+
+internal static partial class TrackingLogger
 {
     [LoggerMessage(LogLevel.Information, "Event tracking started")]
     public static partial void TrackingStarted(this ILogger logger);

@@ -4,7 +4,7 @@ public static class ServiceCollectionExtensions
 {
     public static IServiceCollection AddTrackingServices(this IServiceCollection services)
     {
-        services.AddSingleton<TrackingMetrics>();
+        services.AddSingleton<ITrackingMetrics, TrackingMetrics>();
 
         services.AddOpenTelemetry()
             .WithMetrics(meterProviderBuilder =>
