@@ -2,10 +2,11 @@
 
 namespace Clouseau.Api.Tracking;
 
-public static class TrackingActivity
+internal static class TrackingActivity
 {
-    public const string TrackingActivitySourceName = "clouseau.tracking.activity";
-    public static readonly string TrackingActivityVersion = ServiceDefaults.Diagnostics.SystemVersion;
+    internal const string TrackingActivitySourceName = "clouseau.tracking.activity";
 
-    public static readonly ActivitySource TrackingActivitySource = new(TrackingActivitySourceName, TrackingActivityVersion);
+    internal static readonly string TrackingActivityVersion = ServiceDefaults.Diagnostics.SystemVersion;
+
+    internal static readonly ActivitySource TrackingActivitySource = new(TrackingActivitySourceName, TrackingActivityVersion);
 }
