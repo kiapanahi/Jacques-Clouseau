@@ -51,6 +51,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "compose", "compose", "{FB6F
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clouseau.Infrastructure", "src\infrastructure\Clouseau.Infrastructure.csproj", "{9DCA0BBF-88FC-4E16-9BB3-98671AAA29A3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clouseau.Core", "src\core\Clouseau.Core.csproj", "{1ECC6032-A6B3-44DB-8F2E-98BC882ABFD9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
