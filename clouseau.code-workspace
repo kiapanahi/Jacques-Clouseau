@@ -6,8 +6,8 @@
     ],
     "settings": {
         "csharp.format.enable": true,
-        "csharp.suppressDotnetRestoreNotification": true,
         "dotnet.defaultSolution": "Cleaseau.sln",
-        "solutionexplorer.showMode": "activityBar"
+        "editor.semanticHighlighting.enabled": true,
+        "csharp.semanticHighlighting.enabled": true
     }
 }
